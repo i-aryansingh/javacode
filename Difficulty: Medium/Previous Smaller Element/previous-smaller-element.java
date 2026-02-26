@@ -6,12 +6,12 @@ class Solution {
         ArrayDeque<Integer> stack = new ArrayDeque<>();
         for (int i = 0; i < n; i++) {
             while (!stack.isEmpty() && stack.peekLast() >= arr[i])
-                stack.removeLast();  // Pop larger elements
+                stack.removeLast();
             if (stack.isEmpty())
                 result.add(-1);
             else
-                result.add(stack.peekLast());  // Previous smaller element
-            stack.addLast(arr[i]);  // Push current element
+                result.add(stack.peekLast());
+            stack.addLast(arr[i]);
         }
         return result;
     }
